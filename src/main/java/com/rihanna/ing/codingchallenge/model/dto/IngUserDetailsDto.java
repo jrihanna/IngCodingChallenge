@@ -1,20 +1,22 @@
 package com.rihanna.ing.codingchallenge.model.dto;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.rihanna.ing.codingchallenge.model.AddressModel;
 import com.rihanna.ing.codingchallenge.model.GenderEnum;
-import com.rihanna.ing.codingchallenge.model.IngUserDetailModel;
 import com.rihanna.ing.codingchallenge.model.IngUserDetailsModel;
 import com.rihanna.ing.codingchallenge.model.TitleEnum;
 
 public class IngUserDetailsDto implements UserDetails {
 
-	@JsonIgnore
+//	@JsonIgnore
 	private long userId;
 	private String username;
 	
@@ -40,6 +42,7 @@ public class IngUserDetailsDto implements UserDetails {
 	private String lastName;
 	private GenderEnum gender;
 	private AddressModel address;
+	private String role;
 	
 	public IngUserDetailsDto() {}
 	
@@ -56,6 +59,15 @@ public class IngUserDetailsDto implements UserDetails {
 		this.firstN = iuld.getFirstN();
 		this.title = iuld.getTitle();
 		this.password = iuld.getPassword();
+		this.role = iuld.getRole();
+		this.authorities = getAuthorities();
+	}
+	
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
 	}
 	
 	public long getUserId() {
@@ -118,8 +130,11 @@ public class IngUserDetailsDto implements UserDetails {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	@Override
 	public List<GrantedAuthority> getAuthorities() {
-		return authorities;
+		List<GrantedAuthority> list = new ArrayList<GrantedAuthority>();
+        list.add(new SimpleGrantedAuthority(role));
+        return list;
 	}
 	public void setAuthorities(List<GrantedAuthority> authorities) {
 		this.authorities = authorities;

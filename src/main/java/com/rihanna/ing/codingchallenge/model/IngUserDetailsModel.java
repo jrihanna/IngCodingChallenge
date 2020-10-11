@@ -26,11 +26,18 @@ public class IngUserDetailsModel {
 	private String firstN;
 	private String lastName;
 	private GenderEnum gender;
+	private String role;
+	
 	
 	@ManyToOne
 	private AddressModel address;
 
-	
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
 	public TitleEnum getTitle() {
 		return title;
 	}

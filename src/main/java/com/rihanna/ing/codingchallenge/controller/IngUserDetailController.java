@@ -7,12 +7,14 @@ import javax.validation.constraints.Pattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.format.annotation.NumberFormat.Style;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.lang.NonNull;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -51,7 +53,7 @@ public class IngUserDetailController {
 			UserDetails user = ingUserDetailService.findByUserId(userId);
 		    return ResponseEntity.ok(user);
 		} catch(UsernameNotFoundException e) {
-			return ResponseEntity.notFound().build();
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
 		} catch(Exception e) {
 			return ResponseEntity.badRequest().build();
 		}
@@ -59,8 +61,15 @@ public class IngUserDetailController {
 	
 	@RequestMapping(value = "/api/user/updatedetails", method= RequestMethod.PUT)
 	@ResponseBody
-	public UserDetails updateUserDetails(@RequestBody IngUserDetailsDto userDetails) {
-		UserDetails user = ingUserDetailService.findByUserId(1);
-	    return user;
+	@Transactional(rollbackFor = Throwable.class)
+	public ResponseEntity<?> updateUserDetails(@RequestBody IngUserDetailsDto userDetails) {
+	    try {
+	    	UserDetails user = ingUserDetailService.updateUserDetails(userDetails);
+		    return ResponseEntity.ok(user);
+		} catch(UsernameNotFoundException e) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
+		} catch(Exception e) {
+			return ResponseEntity.badRequest().build();
+		}
 	}
 }
