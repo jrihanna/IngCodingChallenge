@@ -1,0 +1,43 @@
+2020-10-12 02:34:13.046  INFO 14416 --- [main] c.r.i.c.CodingChallengeApplication       : Starting CodingChallengeApplication on LAPTOP-F48K57Q8 with PID 14416 (C:\Users\reihane\eclipse-workspace\ing\coding-challenge\target\classes started by reihane in C:\Users\reihane\eclipse-workspace\ing\coding-challenge)
+2020-10-12 02:34:13.053  INFO 14416 --- [main] c.r.i.c.CodingChallengeApplication       : No active profile set, falling back to default profiles: default
+2020-10-12 02:34:14.067  WARN 14416 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-10-12 02:34:14.816  INFO 14416 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-12 02:34:14.991  INFO 14416 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 158ms. Found 1 JPA repository interfaces.
+2020-10-12 02:34:16.759  INFO 14416 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-12 02:34:16.775  INFO 14416 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-12 02:34:16.776  INFO 14416 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-12 02:34:17.218  INFO 14416 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-12 02:34:17.218  INFO 14416 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4055 ms
+2020-10-12 02:34:17.746  INFO 14416 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-12 02:34:17.787  INFO 14416 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-12 02:34:18.300  INFO 14416 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-12 02:34:18.542  INFO 14416 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-12 02:34:18.696  WARN 14416 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-12 02:34:18.796  INFO 14416 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-12 02:34:19.160  INFO 14416 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-12 02:34:19.383  INFO 14416 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-12 02:34:29.048  INFO 16036 --- [main] c.r.i.c.CodingChallengeApplication       : Starting CodingChallengeApplication on LAPTOP-F48K57Q8 with PID 16036 (C:\Users\reihane\eclipse-workspace\ing\coding-challenge\target\classes started by reihane in C:\Users\reihane\eclipse-workspace\ing\coding-challenge)
+2020-10-12 02:34:29.056  INFO 16036 --- [main] c.r.i.c.CodingChallengeApplication       : No active profile set, falling back to default profiles: default
+2020-10-12 02:34:30.110  WARN 16036 --- [background-preinit] o.s.h.c.j.Jackson2ObjectMapperBuilder    : For Jackson Kotlin classes support please add "com.fasterxml.jackson.module:jackson-module-kotlin" to the classpath
+2020-10-12 02:34:30.651  INFO 16036 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-10-12 02:34:30.830  INFO 16036 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 160ms. Found 1 JPA repository interfaces.
+2020-10-12 02:34:32.336  INFO 16036 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-10-12 02:34:32.351  INFO 16036 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-12 02:34:32.351  INFO 16036 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-10-12 02:34:32.653  INFO 16036 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-10-12 02:34:32.654  INFO 16036 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3480 ms
+2020-10-12 02:34:33.183  INFO 16036 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-12 02:34:33.217  INFO 16036 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-12 02:34:33.602  INFO 16036 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-12 02:34:33.783  INFO 16036 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-12 02:34:33.989  WARN 16036 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-10-12 02:34:34.091  INFO 16036 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-10-12 02:34:34.585  INFO 16036 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-12 02:34:34.709  INFO 16036 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@649b5891, org.springframework.security.web.context.SecurityContextPersistenceFilter@7911cc15, org.springframework.security.web.header.HeaderWriterFilter@27e44e9c, org.springframework.security.web.authentication.logout.LogoutFilter@35563e4c, com.rihanna.ing.codingchallenge.security.filter.JwtRequestFilter@4dc7cd1c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@14e750c5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@66713605, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7a3f08b6, org.springframework.security.web.session.SessionManagementFilter@25a5c8e, org.springframework.security.web.access.ExceptionTranslationFilter@30508066, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4245bf68]
+2020-10-12 02:34:35.108  INFO 16036 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-10-12 02:34:35.801  INFO 16036 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-10-12 02:34:35.806  INFO 16036 --- [main] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-10-12 02:34:37.060  INFO 16036 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-12 02:34:37.075  INFO 16036 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-12 02:34:37.611  INFO 16036 --- [main] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-10-12 02:34:37.626  INFO 16036 --- [main] c.r.i.c.CodingChallengeApplication       : Started CodingChallengeApplication in 9.186 seconds (JVM running for 10.367)
