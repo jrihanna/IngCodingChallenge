@@ -1,6 +1,7 @@
 package com.rihanna.ing.codingchallenge.model.dto;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -131,9 +132,14 @@ public class IngUserDetailsDto implements UserDetails {
 	}
 	@Override
 	public List<GrantedAuthority> getAuthorities() {
-		List<GrantedAuthority> list = new ArrayList<GrantedAuthority>();
-        list.add(new SimpleGrantedAuthority(role));
-        return list;
+		if (this.role != null) {
+			List<GrantedAuthority> list = new ArrayList<GrantedAuthority>();
+	        list.add(new SimpleGrantedAuthority(role));
+	        return list;
+		}
+		else
+			return Collections.EMPTY_LIST;
+		
 	}
 	public void setAuthorities(List<GrantedAuthority> authorities) {
 		this.authorities = authorities;
