@@ -4,7 +4,6 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
@@ -22,9 +21,6 @@ public class IngUserDetailServiceImp implements IngUserDetailService {
 	
 	@Autowired
 	IngUserRepository ingUserRepository;
-	
-	@Autowired
-    private ModelMapper modelMapper;
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
