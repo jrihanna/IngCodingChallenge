@@ -53,7 +53,7 @@ class CodingChallengeApplicationTests {
 
 	// Because it's an in-memory db, it wouldn't pass
 	@Test
-	@Sql(scripts = {"classpath:data1.sql"})
+//	@Sql(scripts = {"classpath:data.sql"})
 	void test_loadUserByUsername_expect_user() {
 		IngUserDetailsDto dto = new IngUserDetailsDto();
 		dto.setUserId(20);
