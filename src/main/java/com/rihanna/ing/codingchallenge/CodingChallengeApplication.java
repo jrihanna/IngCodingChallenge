@@ -1,16 +1,15 @@
 package com.rihanna.ing.codingchallenge;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 
+/**
+ * Start here
+ * @author reihanesadat.zekri
+ *
+ */
 @SpringBootApplication
 public class CodingChallengeApplication {
-	@Bean
-	public ModelMapper modelMapper() {
-	    return new ModelMapper();
-	}
 	
 	public static void main(String[] args) {
 		SpringApplication.run(CodingChallengeApplication.class, args);
