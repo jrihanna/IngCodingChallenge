@@ -1,7 +1,6 @@
 package com.rihanna.ing.codingchallenge.model.dto;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
