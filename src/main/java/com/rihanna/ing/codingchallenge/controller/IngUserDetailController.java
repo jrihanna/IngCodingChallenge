@@ -33,6 +33,7 @@ import com.rihanna.ing.codingchallenge.service.IngUserDetailService;
  */
 @RestController
 @Validated
+@RequestMapping("/api")
 public class IngUserDetailController {
     
 	Logger logger = LoggerFactory.getLogger(IngUserDetailController.class);
@@ -63,7 +64,7 @@ public class IngUserDetailController {
 	 * @return
 	 */
 	@Log
-	@RequestMapping(value = "/api/user/userdetails/{userId}", method= RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/user/userdetails/{userId}", method= RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public ResponseEntity<?> getUserDetails(@PathVariable @Valid @Pattern(regexp="^[0-9]+", message="Invalid userId") String userId) {
 		UserDetails user = ingUserDetailService.findByUserId(Long.valueOf(userId));
@@ -78,7 +79,7 @@ public class IngUserDetailController {
 	 * @return
 	 */
 	@Log
-	@RequestMapping(value = "/api/user/updatedetails", method= RequestMethod.PUT)
+	@RequestMapping(value = "/user/updatedetails", method= RequestMethod.PUT)
 	@ResponseBody
 	@Transactional(rollbackFor = Throwable.class)
 	public ResponseEntity<?> updateUserDetails(@RequestBody IngUserDetailsDto userDetails) {

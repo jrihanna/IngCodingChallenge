@@ -37,7 +37,9 @@ public class IngUserSecurityConfigurer extends WebSecurityConfigurerAdapter {
 		http
 			.authorizeRequests()
 			.antMatchers("/api/user/update*").hasRole("ADMIN") // Only Admin can update users
-			.antMatchers("/login").permitAll()
+			.antMatchers("/api/login").permitAll()
+			.antMatchers("/v2/api-docs").permitAll()
+			.antMatchers("/swagger**").permitAll()
 			.anyRequest().authenticated().and()
 			.csrf().disable()
 			.exceptionHandling().and()
