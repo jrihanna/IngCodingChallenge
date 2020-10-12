@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -36,17 +37,27 @@ public class IngUserSecurityConfigurer extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 			.authorizeRequests()
-			.antMatchers("/api/user/update*").hasRole("ADMIN") // Only Admin can update users
-			.antMatchers("/api/login").permitAll()
-			.antMatchers("/v2/api-docs").permitAll()
-			.antMatchers("/swagger**").permitAll()
-			.anyRequest().authenticated().and()
+			.antMatchers("/ing/api/user/update*").authenticated()
+			.antMatchers("/ing/api/user/update*").hasRole("ADMIN") // Only Admin can update users
+			.antMatchers("/ing/api/login").permitAll()
+			.antMatchers("/ing/v2/api-docs").permitAll()
+			.antMatchers("/ing/swagger-ui/index.html").permitAll()
+			.and()
 			.csrf().disable()
 			.exceptionHandling().and()
 			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 	}
 
+	@Override
+    public void configure(WebSecurity web) throws Exception {
+        web.ignoring().antMatchers("/ing/v2/api-docs",
+                                   "/ing/configuration/ui",
+                                   "/ing/swagger-resources/**",
+                                   "/ing/configuration/security",
+                                   "/ing/swagger-ui.html",
+                                   "/ing/webjars/**");
+    }
 
 	@Bean
 	public PasswordEncoder passwordEncoder() {
