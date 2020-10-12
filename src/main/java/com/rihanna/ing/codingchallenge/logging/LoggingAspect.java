@@ -12,6 +12,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StopWatch;
 
+
+/**
+ * An aspect to log events at certain points of reaching to a method
+ * @see om.rihanna.ing.codingchallenge.logging.Log
+ * @author reihanesadat.zekri
+ *
+ */
 @Aspect
 @Component
 public class LoggingAspect {
