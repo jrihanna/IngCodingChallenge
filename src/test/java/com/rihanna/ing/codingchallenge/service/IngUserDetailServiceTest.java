@@ -1,14 +1,23 @@
 package com.rihanna.ing.codingchallenge.service;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-import org.junit.jupiter.api.Test;
+import com.rihanna.ing.codingchallenge.repository.IngUserRepository;
 
+@ExtendWith(MockitoExtension.class)
 class IngUserDetailServiceTest {
+	
+	
+	@Mock
+	IngUserRepository ingUserRepository;
+	
+	@InjectMocks
+	IngUserDetailService service = new IngUserDetailServiceImp();
 
-	@Test
-	void testLoadUserByUsername() {
-		fail("Not yet implemented");
-	}
+	
+	
 
 }
